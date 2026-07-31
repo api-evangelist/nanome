@@ -1,0 +1,53 @@
+generated: '2026-07-20'
+method: derived
+source: https://github.com/nanome-ai/claude-code-nanome-plugin (skills/nanome-workspace/SKILL.md — API Reference + Component Schema)
+note: >-
+  Entity-relationship graph for the Nanome Workspaces API (workspaces.nanome.ai), derived from
+  the documented endpoints and component schema. No OpenAPI is published; entities/fields are
+  taken verbatim from the provider skill's API Reference and Component/Filter/Visualization schema.
+entities:
+  - name: Workspace
+    id: id
+    id_type: GUID
+    fields: [id, name, description]
+    endpoint: POST /workspaces
+    user_facing_url: https://mara.nanome.ai/workspaces/{id}
+  - name: Entry
+    id: serial
+    id_type: integer (per-workspace, starts at 1)
+    fields: [serial, name]
+    endpoint: POST /workspaces/{id}/entries/load
+    note: A loaded molecular structure (PDB/SDF/CIF/PQR). entries/load returns an array.
+  - name: Scene
+    id: serial
+    id_type: integer (per-workspace; serial 1 auto-created with the workspace)
+    fields: [serial, name]
+    endpoint: POST /workspaces/{id}/scenes
+  - name: Component
+    id: serial
+    id_type: integer (per-scene)
+    fields: [name, filters, visualizations]
+    endpoint: POST /workspaces/{id}/scenes/{serial}/components/add
+    note: One component per call. Composed of filters (atom selection) + visualizations (render styles with nested coloring).
+relationships:
+  - from: Workspace
+    to: Entry
+    kind: has_many
+    via: workspace id in path (/workspaces/{id}/entries/...)
+  - from: Workspace
+    to: Scene
+    kind: has_many
+    via: workspace id in path (/workspaces/{id}/scenes)
+  - from: Scene
+    to: Component
+    kind: has_many
+    via: workspace id + scene serial in path (/workspaces/{id}/scenes/{serial}/components/add)
+  - from: Component
+    to: Entry
+    kind: references
+    via: EntrySerial filter (entrySerial)
+enumerations:
+  substructure_types: [Protein, DNA, RNA, PNA, Ligand, Saccharide, Ion, Solvent, Nucleic, Polymer]
+  visualization_kinds: [Atomistic, MolecularSurface, Ribbon, ResidueLabel, Interaction]
+  coloring_kinds: [ElementType, Property, ResidueType, SecondaryStructure, Uniform, Enumerated, HydrogenBonding, Electrostatic]
+  structure_sources: [rcsb, alphafold, pubchem, chembl, swissmodel, cod, local]

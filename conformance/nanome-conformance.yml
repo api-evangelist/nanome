@@ -1,0 +1,20 @@
+generated: '2026-07-20'
+method: derived
+source: authentication/nanome-authentication.yml + conventions/nanome-conventions.yml
+note: Cross-cutting standards posture derived from the documented auth and API conventions. No published compliance program (SOC 2/ISO/etc.) was found, so no Compliance pointer is emitted.
+standards:
+  - id: http-bearer-auth
+    conforms: true
+    evidence: Authorization Bearer token documented across Workspaces and account APIs.
+  - id: oauth2
+    conforms: false
+    evidence: Long-lived API-key bearer tokens, not an OAuth2 authorization-server flow.
+  - id: openid-connect
+    conforms: false
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: Errors are plain HTTP status codes; no application/problem+json.
+  - id: rfc8594-sunset-header
+    conforms: false
+  - id: json-api
+    conforms: false

@@ -1,0 +1,26 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/nanome-ai/claude-code-nanome-plugin
+note: >-
+  Provider-published Agent Skills, captured verbatim from Nanome's official Claude Code
+  plugin (nanome-ai/claude-code-nanome-plugin, nanome-plugin/skills/). They are grounded
+  in the live Nanome Workspaces API (https://workspaces.nanome.ai) and the Nanome MCP
+  server (nanome_* tools).
+skills:
+  - file: nanome-auth.md
+    name: nanome-auth
+    description: Authenticate with Nanome by creating a long-lived API key at mara.nanome.ai/settings; saved to ~/.nanome/config.json.
+    api: https://api.nanome.ai
+    operations: [GET /user/session]
+  - file: nanome-workspace.md
+    name: nanome-workspace
+    description: Generate Nanome workspaces and scenes populated with molecular structures (RCSB PDB, AlphaFold, PubChem, ChEMBL, SWISS-MODEL, COD) and visualization components.
+    api: https://workspaces.nanome.ai
+    operations:
+      - POST /workspaces
+      - POST /workspaces/{id}/entries/load
+      - POST /workspaces/{id}/scenes
+      - POST /workspaces/{id}/scenes/{serial}/rename
+      - POST /workspaces/{id}/scenes/{serial}/components/add
+      - POST /workspaces/{id}/scenes/{serial}/components/add-default
+      - POST /workspaces/{id}/scenes/{serial}/components/toggle-hidden

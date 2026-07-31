@@ -1,0 +1,28 @@
+generated: '2026-07-20'
+method: searched
+status: published
+source: https://github.com/nanome-ai/claude-code-nanome-plugin (nanome-plugin/skills/nanome-workspace/SKILL.md, "MCP Mode")
+note: >-
+  Nanome's official Claude Code plugin documents a Nanome MCP server exposing nanome_* tools
+  ("Claude Chat with Nanome MCP server"). The tool surface below is captured verbatim from the
+  provider skill's MCP Mode. No public hosted MCP endpoint URL or transport is published in the
+  skill, so the connection URL is left unset. Tools map to the live Workspaces API (workspaces.nanome.ai).
+server:
+  name: nanome
+  transport: unknown
+tools:
+  - name: nanome_create_workspace
+    description: Create a new Nanome workspace ({ name, description }); returns { id, name }.
+    source_operation: workspaces.nanome.ai POST /workspaces
+  - name: nanome_load_structure
+    description: Load a molecular structure into a workspace from a source database ({ workspace_id, source, id }); returns { serial, name }.
+    source_operation: workspaces.nanome.ai POST /workspaces/{id}/entries/load
+  - name: nanome_create_scene
+    description: Create a new scene in a workspace ({ workspace_id }); returns { serial, name }.
+    source_operation: workspaces.nanome.ai POST /workspaces/{id}/scenes
+  - name: nanome_rename_scene
+    description: Rename a scene ({ workspace_id, scene_serial, name }).
+    source_operation: workspaces.nanome.ai POST /workspaces/{id}/scenes/{serial}/rename
+  - name: nanome_add_component
+    description: Add a visualization component to a scene ({ workspace_id, scene_serial, component }); one component per call.
+    source_operation: workspaces.nanome.ai POST /workspaces/{id}/scenes/{serial}/components/add

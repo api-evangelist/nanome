@@ -1,0 +1,23 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/nanome-ai/claude-code-nanome-plugin (nanome-plugin/skills/nanome-auth/SKILL.md)
+docs: https://mara.nanome.ai/settings
+summary:
+  types: [http]
+  http_scheme: bearer
+  api_key_in: []
+  oauth2_flows: []
+schemes:
+  - name: bearerAuth
+    type: http
+    scheme: bearer
+    description: >-
+      Long-lived Nanome API key passed as an HTTP `Authorization: Bearer {token}` header.
+      Keys are created from the mara.nanome.ai account settings (System tab -> API Keys -> Create)
+      and stored client-side (the official plugin saves to ~/.nanome/config.json). All Workspaces
+      API (workspaces.nanome.ai) and account API (api.nanome.ai) calls use the same bearer token.
+    sources: [skills/nanome-auth.md, skills/nanome-workspace.md]
+notes:
+  - Session validity can be checked with GET https://api.nanome.ai/user/session (200 = valid token).
+  - The workspace API base URL is discoverable at https://mara.nanome.ai/info (workspace_api_url field).
+  - A missing/expired key surfaces as HTTP 401/403 on API calls; re-create the key in account settings.

@@ -1,0 +1,20 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/nanome-ai/claude-code-nanome-plugin (skills/nanome-workspace/SKILL.md + skills/nanome-auth/SKILL.md)
+format: http-status
+note: >-
+  Nanome does not publish an RFC 9457 problem+json error catalog. These are the HTTP error
+  conditions the official plugin documents against the Workspaces API and account API.
+errors:
+  - status: 401
+    title: Unauthorized
+    cause: Missing or expired API key / bearer token.
+    remediation: Re-create a long-lived API key at mara.nanome.ai/settings (System tab) and retry.
+  - status: 403
+    title: Forbidden
+    cause: Token present but not permitted for the requested resource.
+    remediation: Verify the account/token has access; re-authenticate if needed.
+  - status: 500
+    title: Internal Server Error
+    cause: Malformed component payload — most commonly a visualization object missing the required `size` field, or `coloring` missing `carbonsOnly`.
+    remediation: Include `size` ({sizeOption, scale}) on every visualization and `carbonsOnly` on every coloring object; send one component per /components/add call (not an array).

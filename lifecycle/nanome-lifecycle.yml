@@ -1,0 +1,20 @@
+generated: '2026-07-20'
+method: searched
+source: live probe + https://docs.nanome.ai
+versioning:
+  scheme: dated build version
+  current: '2026-07-03'
+  evidence: 'GET https://api.nanome.ai reports {"version":"2026-07-03"}'
+  discovery: https://mara.nanome.ai/info exposes workspace_api_url
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: No public deprecation/sunset-header policy is documented.
+sla:
+  url: null
+status_page: https://nanome.statuspage.io
+products:
+  - Nanome (VR/XR molecular visualization, v2 + Classic v1.24)
+  - Nanome Web (browser molecular workspace)
+  - MARA (in-session AI assistant / agent platform, mara.nanome.ai)
+deprecated_operations: []

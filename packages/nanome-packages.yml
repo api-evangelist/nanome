@@ -1,0 +1,13 @@
+generated: '2026-07-20'
+method: searched
+source: https://pypi.org/pypi/nanome/json
+packages:
+  - language: python
+    registry: pypi
+    name: nanome
+    url: https://pypi.org/project/nanome/
+    install: pip install nanome
+    version: 0.42.1
+    official: true
+    description: Nanome Lib — Python API for building Nanome Plugins (structures, complexes, plugin lifecycle).
+    repository: https://github.com/nanome-ai/nanome

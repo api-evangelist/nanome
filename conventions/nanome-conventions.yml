@@ -1,0 +1,44 @@
+generated: '2026-07-20'
+method: searched
+source: >-
+  https://github.com/nanome-ai/claude-code-nanome-plugin (skills/nanome-workspace/SKILL.md)
+  + live probe of https://api.nanome.ai
+note: >-
+  Cross-cutting semantics of the Nanome APIs. Nanome does NOT document an idempotency-key
+  contract or cursor pagination, so those are recorded as unknown/not-documented rather than
+  asserted. Cross-links: authentication/nanome-authentication.yml, errors/nanome-error-codes.yml,
+  data-model/nanome-data-model.yml.
+authentication:
+  style: http-bearer
+  header: 'Authorization: Bearer {token}'
+  ref: authentication/nanome-authentication.yml
+response_envelope:
+  account_api:
+    host: https://api.nanome.ai
+    shape: '{ "success": true, "results": { ... } }'
+    evidence: 'GET https://api.nanome.ai -> {"success":true,"results":{"message":"Welcome to Nanome","version":"2026-07-03"}}'
+  workspaces_api:
+    host: https://workspaces.nanome.ai
+    shape: bare JSON resource objects (e.g. workspace create returns { id, name }; scene create returns { serial, name })
+    note: entry load returns an array [{ serial, name }]; scene/workspace create return single objects.
+content_types:
+  request: application/json (multipart/form-data for entries/load file upload)
+  response: application/json
+idempotency:
+  documented: false
+  note: No Idempotency-Key header or idempotent-retry contract is documented; write operations (POST) are not declared safe to blind-retry.
+pagination:
+  documented: false
+versioning:
+  scheme: dated build version
+  evidence: account API root reports "version":"2026-07-03"
+  discovery: https://mara.nanome.ai/info returns workspace_api_url dynamically
+error_signaling:
+  http_status: true
+  documented_codes: [401, 403, 500]
+  notes:
+    - 401/403 indicate a missing/expired API key (re-authenticate).
+    - 500 (Internal Server Error) is returned on malformed component payloads (e.g. a visualization missing the required `size` object).
+  ref: errors/nanome-error-codes.yml
+rate_limit_signaling:
+  documented: false

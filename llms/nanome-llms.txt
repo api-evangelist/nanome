@@ -1,0 +1,27 @@
+# Nanome
+
+> Nanome is a collaborative workspace for drug discovery — molecular visualization and design in VR/XR and the browser, with an in-session AI assistant (MARA). Scientists and agents load protein and small-molecule structures from public databases, organize them into scenes with rich visual representations, and collaborate in shared 3D workspaces. Nanome exposes a REST Workspaces API and an official Model Context Protocol (MCP) server so agents can build and populate workspaces programmatically.
+
+## APIs
+- [Nanome Workspaces API](https://workspaces.nanome.ai): REST API to create workspaces, load molecular structures (RCSB PDB, AlphaFold, PubChem, ChEMBL, SWISS-MODEL, COD), create/rename scenes, and add visualization components. Bearer-token auth.
+- [Nanome account API](https://api.nanome.ai): account/session API (e.g. GET /user/session to validate a token).
+- [Nanome MCP server](https://github.com/nanome-ai/claude-code-nanome-plugin): nanome_* tools (create_workspace, load_structure, create_scene, rename_scene, add_component).
+
+## Docs
+- [Documentation](https://docs.nanome.ai): help and documentation for Nanome, Nanome Web, MARA, Classic, and plugins.
+- [Authentication](https://mara.nanome.ai/settings): create a long-lived API key (System tab). Pass as `Authorization: Bearer {token}`.
+- [Integrations: Deep Linking](https://docs.nanome.ai/nanome1x/integration/deeplinking): "Open in Nanome" deep links.
+- [Integrations: Quick Drop](https://docs.nanome.ai/nanome1x/integration/quickdrop): quick-drop file handoff.
+
+## SDKs & Skills
+- [nanome (PyPI)](https://pypi.org/project/nanome/): official Python API for building Nanome Plugins.
+- [Claude Code plugin](https://github.com/nanome-ai/claude-code-nanome-plugin): official Agent Skills (nanome-auth, nanome-workspace).
+- [GitHub org](https://github.com/nanome-ai): 65+ public repos (nanome-lib, plugins, docs, tools).
+
+## Company
+- [Website](https://nanome.ai)
+- [Pricing](https://nanome.ai/pricing)
+- [Blog](https://nanome.ai/blog)
+- [Terms](https://nanome.ai/terms)
+- [Privacy](https://nanome.ai/privacy)
+- [Status](https://nanome.statuspage.io)
