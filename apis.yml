@@ -70,6 +70,8 @@ apis:
   humanURL: https://docs.nanome.ai
   baseURL: https://api.nanome.ai
   tags:
+  - Account
+  tags_raw:
   - Accounts
 maintainers:
 - FN: Kin Lane
