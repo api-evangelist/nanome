@@ -1,0 +1,66 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-07'
+method: searched
+source: https://nanome.ai/pricing
+sources:
+- https://nanome.ai/pricing
+provenance:
+  tool: all/0-working/economics/harvest_pricing.py
+  run: 20261007T104522
+  grounding: every price_text was found verbatim in the fetched page text
+audience: business-product
+pricing_basis: per-seat
+delivery:
+  delivery: managed+licensed
+  method: page
+  read: '2026-10-07'
+  evidence: Enterprise deployed behind your firewall (cloud or on-prem) with custom development, internal
+    database integration, and dedicated IT support.
+  managed_tier: Full seat
+published: true
+note: Monthly/annual toggle; FAQ states academic Full seat $250/yr, Department Full Web Seats start at
+  $50/yr (50-license min) and Full seats $150/yr. Credits purchasable with any seat type for tool/MCP
+  calls.
+plan_count: 6
+currency: USD
+plans:
+- name: Starter (Free Web Seat)
+  price_text: Free
+  period: none
+  unit: seat
+  included_quota: Free + 50 MARA credits; Web-based molecular visualization (3 workspaces, 1 project);
+    5 most recent files · 7 days of chat history
+- name: Academic Classroom / Personal — Free Web Seat
+  price_text: Free
+  period: none
+  unit: seat
+  included_quota: Equivalent to Starter tier
+- name: Academic Classroom / Personal — Full seat
+  price_text: $20.83 /mo
+  price: 20.83
+  currency: USD
+  period: month
+  unit: seat
+  included_quota: 'MCP Calls: 100; Nanome-hosted shared tenant collaboration server; access to 300+ tools'
+- name: Academic Department — Full Web Seat
+  price_text: $4.17 /mo
+  price: 4.17
+  currency: USD
+  period: month
+  unit: seat
+  included_quota: Starting at, Minimum 50 licenses
+- name: Academic Department — Full seat
+  price_text: $12.50 /mo
+  price: 12.5
+  currency: USD
+  period: month
+  unit: seat
+  included_quota: 'MCP Calls: Custom'
+- name: Commercial Cloud / Enterprise
+  price_text: Contact us
+  period: none
+  unit: seat
+  included_quota: 'MCP Calls: Custom; single tenant collaboration server; premium support'
+rate_limit_statements:
+- 'MCP Calls: 100'
+- Minimum 50 licenses
