@@ -64,3 +64,59 @@ plans:
 rate_limit_statements:
 - 'MCP Calls: 100'
 - Minimum 50 licenses
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - seat
+  units:
+  - seat
+  plans:
+  - name: Starter (Free Web Seat)
+    access: other
+    model: unstated
+    model_how: derived
+    units:
+    - seat
+    periods:
+    - none
+  - name: Academic Classroom / Personal — Free Web Seat
+    access: other
+    model: unstated
+    model_how: derived
+    units:
+    - seat
+    periods:
+    - none
+  - name: Academic Classroom / Personal — Full seat
+    access: other
+    model: seat
+    model_how: derived
+    units:
+    - seat
+    periods:
+    - month
+  - name: Academic Department — Full Web Seat
+    access: other
+    model: seat
+    model_how: derived
+    units:
+    - seat
+    periods:
+    - month
+  - name: Academic Department — Full seat
+    access: other
+    model: seat
+    model_how: derived
+    units:
+    - seat
+    periods:
+    - month
+  - name: Commercial Cloud / Enterprise
+    access: other
+    model: unstated
+    model_how: derived
+    units:
+    - seat
+    periods:
+    - none
