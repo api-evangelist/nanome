@@ -64,6 +64,105 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Nanome is a company surfaced as a portfolio company of bullpen-capital and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+Nanome is a collaborative workspace for drug discovery — molecular visualization and design in VR/XR and the browser, backed by an in-session AI assistant called MARA. Scientists and agents load protein and small-molecule structures from public databases (RCSB PDB, AlphaFold, PubChem, ChEMBL, SWISS-MODEL, COD), organize them into scenes with rich visual representations (cartoons, surfaces, ball-and-stick, interactions), and collaborate inside shared 3D workspaces. Nanome exposes a REST Workspaces API (workspaces.nanome.ai) and an official Model Context Protocol (MCP) server so agents can build and populate workspaces programmatically, plus a Python library (nanome-lib) for authoring plugins. Surfaced as a portfolio company of Bullpen Capital and enriched into the API Evangelist network.
 
-Backed by: bullpen-capital — https://nanome.ai
+**Areas:** Company · Drug Discovery · Molecular Visualization · Life Sciences · Cheminformatics · Structural Biology · Virtual Reality · Collaboration · Artificial Intelligence
+
+## Nanome on APIs.io
+
+Everything profiled for Nanome is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/nanome/](https://apis.io/providers/nanome/)** — or go straight to one of the APIs or properties below.
+
+### APIs (2)
+
+- [Nanome Workspaces API](https://apis.io/apis/nanome/nanome-workspaces-api/) — REST API to create workspaces, load molecular structures, create and rename scenes, and add visualization components. Bearer-token auth. Powers the MARA…
+- [Nanome Account API](https://apis.io/apis/nanome/nanome-account-api/) — Account and session API (e.g. GET /user/session to validate a token).
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [nanome](https://apis.io/servers/nanome/nanome/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Nanome Authentication](https://apis.io/security/nanome/nanome-authentication/)
+- [Nanome Domain Security](https://apis.io/security/nanome/nanome-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Nanome Plans Pricing](https://apis.io/plans/nanome/nanome-plans-pricing/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://nanome.ai)
+- [Documentation](https://docs.nanome.ai)
+- [Pricing](https://nanome.ai/pricing)
+- [Sign up](https://mara.nanome.ai/login)
+- [Blog](https://nanome.ai/blog)
+- [Terms of service](https://nanome.ai/terms)
+- [Privacy policy](https://nanome.ai/privacy)
+- [GitHub](https://github.com/nanome-ai)
+- [Status](https://nanome.statuspage.io)
+
+## API Evangelist rating
+
+**Kin Score 33.2** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 71.7 |
+| Contract quality | 0.0 |
+| Contract governance | 4.5 |
+| Operational transparency | 18.4 |
+| Developer ergonomics | 47.6 |
+| Access clarity | 63.2 |
+
+**Agent readiness 12.4** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | documented (partial credit) |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | yes |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 18.4** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/nanome/](https://apis.io/providers/nanome/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Nanome: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/nanome/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
